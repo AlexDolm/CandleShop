@@ -8,18 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		1F4F2D7428EC09A700D39263 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F2D7328EC09A700D39263 /* AppDelegate.swift */; };
-		1F4F2D7828EC09A700D39263 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F2D7728EC09A700D39263 /* ViewController.swift */; };
+		1F4F2D7828EC09A700D39263 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F2D7728EC09A700D39263 /* CatalogViewController.swift */; };
 		1F4F2D7D28EC09AA00D39263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F4F2D7C28EC09AA00D39263 /* Assets.xcassets */; };
 		1F4F2D8028EC09AA00D39263 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4F2D7E28EC09AA00D39263 /* LaunchScreen.storyboard */; };
+		1F4F2D8928EC814F00D39263 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F2D8828EC814F00D39263 /* Constants.swift */; };
+		1F4F2D9128EC875300D39263 /* SaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F2D9028EC875300D39263 /* SaleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F4F2D7028EC09A700D39263 /* CandleShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandleShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F4F2D7328EC09A700D39263 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1F4F2D7728EC09A700D39263 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1F4F2D7728EC09A700D39263 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
 		1F4F2D7C28EC09AA00D39263 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F4F2D7F28EC09AA00D39263 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F4F2D8128EC09AA00D39263 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F4F2D8828EC814F00D39263 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1F4F2D9028EC875300D39263 /* SaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,13 +56,71 @@
 		1F4F2D7228EC09A700D39263 /* CandleShop */ = {
 			isa = PBXGroup;
 			children = (
-				1F4F2D7328EC09A700D39263 /* AppDelegate.swift */,
-				1F4F2D7728EC09A700D39263 /* ViewController.swift */,
-				1F4F2D7C28EC09AA00D39263 /* Assets.xcassets */,
-				1F4F2D7E28EC09AA00D39263 /* LaunchScreen.storyboard */,
-				1F4F2D8128EC09AA00D39263 /* Info.plist */,
+				1F4F2D8A28EC832700D39263 /* Features */,
+				1F4F2D8C28EC84ED00D39263 /* DesignSystem */,
+				1F4F2D8728EC80E200D39263 /* Supporting Files */,
 			);
 			path = CandleShop;
+			sourceTree = "<group>";
+		};
+		1F4F2D8728EC80E200D39263 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1F4F2D7328EC09A700D39263 /* AppDelegate.swift */,
+				1F4F2D8128EC09AA00D39263 /* Info.plist */,
+				1F4F2D7C28EC09AA00D39263 /* Assets.xcassets */,
+				1F4F2D8828EC814F00D39263 /* Constants.swift */,
+				1F4F2D7E28EC09AA00D39263 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1F4F2D8A28EC832700D39263 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				1F4F2D8D28EC853300D39263 /* Catalog */,
+				1F4F2D8E28EC865700D39263 /* Sale */,
+				1F4F2D8F28EC86E300D39263 /* Basket */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		1F4F2D8B28EC84A000D39263 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		1F4F2D8C28EC84ED00D39263 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				1F4F2D8B28EC84A000D39263 /* Styles */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		1F4F2D8D28EC853300D39263 /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				1F4F2D7728EC09A700D39263 /* CatalogViewController.swift */,
+			);
+			path = Catalog;
+			sourceTree = "<group>";
+		};
+		1F4F2D8E28EC865700D39263 /* Sale */ = {
+			isa = PBXGroup;
+			children = (
+				1F4F2D9028EC875300D39263 /* SaleViewController.swift */,
+			);
+			path = Sale;
+			sourceTree = "<group>";
+		};
+		1F4F2D8F28EC86E300D39263 /* Basket */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Basket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,8 +193,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F4F2D7828EC09A700D39263 /* ViewController.swift in Sources */,
+				1F4F2D7828EC09A700D39263 /* CatalogViewController.swift in Sources */,
 				1F4F2D7428EC09A700D39263 /* AppDelegate.swift in Sources */,
+				1F4F2D8928EC814F00D39263 /* Constants.swift in Sources */,
+				1F4F2D9128EC875300D39263 /* SaleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +336,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CandleShop/Info.plist;
+				INFOPLIST_FILE = "CandleShop/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -299,7 +363,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CandleShop/Info.plist;
+				INFOPLIST_FILE = "CandleShop/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
