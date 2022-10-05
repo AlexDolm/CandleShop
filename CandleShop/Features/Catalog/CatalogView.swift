@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SnapKit
 
 
 final class CatalogView: UIView {
@@ -14,7 +15,7 @@ final class CatalogView: UIView {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.text = "S.subtitle"
-    label.backgroundColor = .orange
+   // label.backgroundColor = .orange
     addSubview(label)
     return label
   }()
@@ -31,17 +32,12 @@ final class CatalogView: UIView {
 
 
    func setup() {
-     subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
-     subtitleLabel.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-     subtitleLabel.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-     subtitleLabel.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-     subtitleLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-     
-//    subtitleLabel.snp.makeConstraints { make in
-//      make.leading.equalTo(snp.leadingMargin)
-//      make.trailing.equalTo(snp.trailingMargin)
-//      make.top.equalTo(titleLabel.snp.bottom).offset(4)
-//    }
+    subtitleLabel.snp.makeConstraints { make in
+      make.right.equalToSuperview()
+      make.left.equalToSuperview()
+      make.top.equalToSuperview()
+      make.bottom.equalToSuperview()
+    }
 //    buttonsStackView.snp.makeConstraints { make in
 //      make.top.equalTo(subtitleLabel.snp.bottom).offset(16)
 //      make.leading.equalTo(snp.leadingMargin)

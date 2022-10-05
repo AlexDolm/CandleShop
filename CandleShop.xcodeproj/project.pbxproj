@@ -16,6 +16,7 @@
 		1F4F2D9328ED5F5200D39263 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4F2D9228ED5F5200D39263 /* Storyboard.storyboard */; };
 		1F4F2D9528ED72C400D39263 /* Extension+CatalorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F2D9428ED72C400D39263 /* Extension+CatalorViewController.swift */; };
 		1F4F2D9728ED762700D39263 /* CatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F2D9628ED762700D39263 /* CatalogView.swift */; };
+		73EEF6ED321EB06B3F939458 /* Pods_CandleShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC702675B7DF3B11614F0694 /* Pods_CandleShop.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,9 @@
 		1F4F2D9228ED5F5200D39263 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		1F4F2D9428ED72C400D39263 /* Extension+CatalorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+CatalorViewController.swift"; sourceTree = "<group>"; };
 		1F4F2D9628ED762700D39263 /* CatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogView.swift; sourceTree = "<group>"; };
+		70EB10D1408EB689DF58AA64 /* Pods-CandleShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CandleShop.debug.xcconfig"; path = "Target Support Files/Pods-CandleShop/Pods-CandleShop.debug.xcconfig"; sourceTree = "<group>"; };
+		CC702675B7DF3B11614F0694 /* Pods_CandleShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CandleShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D57731465ACD3EB54A0ACC1C /* Pods-CandleShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CandleShop.release.xcconfig"; path = "Target Support Files/Pods-CandleShop/Pods-CandleShop.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73EEF6ED321EB06B3F939458 /* Pods_CandleShop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +53,8 @@
 			children = (
 				1F4F2D7228EC09A700D39263 /* CandleShop */,
 				1F4F2D7128EC09A700D39263 /* Products */,
+				7603092BBC6BAFEF94FDFFC8 /* Pods */,
+				6D18FBEEAD57027B2FEFA590 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +139,24 @@
 			path = Basket;
 			sourceTree = "<group>";
 		};
+		6D18FBEEAD57027B2FEFA590 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC702675B7DF3B11614F0694 /* Pods_CandleShop.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7603092BBC6BAFEF94FDFFC8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				70EB10D1408EB689DF58AA64 /* Pods-CandleShop.debug.xcconfig */,
+				D57731465ACD3EB54A0ACC1C /* Pods-CandleShop.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +164,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F4F2D8428EC09AA00D39263 /* Build configuration list for PBXNativeTarget "CandleShop" */;
 			buildPhases = (
+				78751F82671930C9116CA33A /* [CP] Check Pods Manifest.lock */,
 				1F4F2D6C28EC09A700D39263 /* Sources */,
 				1F4F2D6D28EC09A700D39263 /* Frameworks */,
 				1F4F2D6E28EC09A700D39263 /* Resources */,
+				19A1A861629C7D06D1566631 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -197,6 +224,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		19A1A861629C7D06D1566631 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CandleShop/Pods-CandleShop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CandleShop/Pods-CandleShop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CandleShop/Pods-CandleShop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78751F82671930C9116CA33A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CandleShop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1F4F2D6C28EC09A700D39263 /* Sources */ = {
@@ -342,6 +411,7 @@
 		};
 		1F4F2D8528EC09AA00D39263 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 70EB10D1408EB689DF58AA64 /* Pods-CandleShop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -369,6 +439,7 @@
 		};
 		1F4F2D8628EC09AA00D39263 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D57731465ACD3EB54A0ACC1C /* Pods-CandleShop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -25,7 +25,6 @@ class CatalogViewController: UIViewController {
   private func createView(){
     addIconToNavBar()
     rootView.subtitleLabel.text = "опоп"
-
   }
 
 
