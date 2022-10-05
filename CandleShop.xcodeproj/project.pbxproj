@@ -14,8 +14,9 @@
 		1F4F2D8928EC814F00D39263 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F2D8828EC814F00D39263 /* Constants.swift */; };
 		1F4F2D9128EC875300D39263 /* SaleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F2D9028EC875300D39263 /* SaleViewController.swift */; };
 		1F4F2D9328ED5F5200D39263 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F4F2D9228ED5F5200D39263 /* Storyboard.storyboard */; };
-		1F4F2D9528ED72C400D39263 /* Extension+CatalorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F2D9428ED72C400D39263 /* Extension+CatalorViewController.swift */; };
 		1F4F2D9728ED762700D39263 /* CatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F2D9628ED762700D39263 /* CatalogView.swift */; };
+		1FBF0C5028ED9DA000A7DFA1 /* Style+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBF0C4F28ED9DA000A7DFA1 /* Style+Button.swift */; };
+		1FBF0C5328ED9E9900A7DFA1 /* CatalogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBF0C5228ED9E9900A7DFA1 /* CatalogCell.swift */; };
 		73EEF6ED321EB06B3F939458 /* Pods_CandleShop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC702675B7DF3B11614F0694 /* Pods_CandleShop.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,8 +30,9 @@
 		1F4F2D8828EC814F00D39263 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1F4F2D9028EC875300D39263 /* SaleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaleViewController.swift; sourceTree = "<group>"; };
 		1F4F2D9228ED5F5200D39263 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
-		1F4F2D9428ED72C400D39263 /* Extension+CatalorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+CatalorViewController.swift"; sourceTree = "<group>"; };
 		1F4F2D9628ED762700D39263 /* CatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogView.swift; sourceTree = "<group>"; };
+		1FBF0C4F28ED9DA000A7DFA1 /* Style+Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Style+Button.swift"; sourceTree = "<group>"; };
+		1FBF0C5228ED9E9900A7DFA1 /* CatalogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCell.swift; sourceTree = "<group>"; };
 		70EB10D1408EB689DF58AA64 /* Pods-CandleShop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CandleShop.debug.xcconfig"; path = "Target Support Files/Pods-CandleShop/Pods-CandleShop.debug.xcconfig"; sourceTree = "<group>"; };
 		CC702675B7DF3B11614F0694 /* Pods_CandleShop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CandleShop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D57731465ACD3EB54A0ACC1C /* Pods-CandleShop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CandleShop.release.xcconfig"; path = "Target Support Files/Pods-CandleShop/Pods-CandleShop.release.xcconfig"; sourceTree = "<group>"; };
@@ -80,10 +82,10 @@
 			isa = PBXGroup;
 			children = (
 				1F4F2D7328EC09A700D39263 /* AppDelegate.swift */,
+				1F4F2D8828EC814F00D39263 /* Constants.swift */,
 				1F4F2D9228ED5F5200D39263 /* Storyboard.storyboard */,
 				1F4F2D8128EC09AA00D39263 /* Info.plist */,
 				1F4F2D7C28EC09AA00D39263 /* Assets.xcassets */,
-				1F4F2D8828EC814F00D39263 /* Constants.swift */,
 				1F4F2D7E28EC09AA00D39263 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
@@ -102,6 +104,7 @@
 		1F4F2D8B28EC84A000D39263 /* Styles */ = {
 			isa = PBXGroup;
 			children = (
+				1FBF0C4F28ED9DA000A7DFA1 /* Style+Button.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -110,7 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				1F4F2D8B28EC84A000D39263 /* Styles */,
-				1F4F2D9428ED72C400D39263 /* Extension+CatalorViewController.swift */,
+				1FBF0C5128ED9E0F00A7DFA1 /* Views */,
 			);
 			path = DesignSystem;
 			sourceTree = "<group>";
@@ -139,6 +142,14 @@
 			path = Basket;
 			sourceTree = "<group>";
 		};
+		1FBF0C5128ED9E0F00A7DFA1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1FBF0C5228ED9E9900A7DFA1 /* CatalogCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		6D18FBEEAD57027B2FEFA590 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,7 +164,6 @@
 				70EB10D1408EB689DF58AA64 /* Pods-CandleShop.debug.xcconfig */,
 				D57731465ACD3EB54A0ACC1C /* Pods-CandleShop.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -272,12 +282,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F4F2D9528ED72C400D39263 /* Extension+CatalorViewController.swift in Sources */,
+				1FBF0C5028ED9DA000A7DFA1 /* Style+Button.swift in Sources */,
 				1F4F2D7828EC09A700D39263 /* CatalogViewController.swift in Sources */,
 				1F4F2D7428EC09A700D39263 /* AppDelegate.swift in Sources */,
 				1F4F2D8928EC814F00D39263 /* Constants.swift in Sources */,
 				1F4F2D9728ED762700D39263 /* CatalogView.swift in Sources */,
 				1F4F2D9128EC875300D39263 /* SaleViewController.swift in Sources */,
+				1FBF0C5328ED9E9900A7DFA1 /* CatalogCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,10 +6,11 @@
 //
 
 import UIKit
-
+import SnapKit
 
 class CatalogViewController: UIViewController {
   private lazy var rootView: CatalogView = .init()
+  
 
   override func loadView() {
     view = rootView
@@ -23,8 +24,9 @@ class CatalogViewController: UIViewController {
   }
 
   private func createView(){
-    addIconToNavBar()
-    rootView.subtitleLabel.text = "опоп"
+    self.navigationController?.isNavigationBarHidden = true
+    //rootView.year = 2
+   // rootView.subtitleLabel.text = "опоп"
   }
 
 

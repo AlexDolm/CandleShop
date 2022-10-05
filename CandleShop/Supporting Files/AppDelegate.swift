@@ -26,8 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       tabBarVC.setViewControllers(views, animated: true)
 
       tabBarVC.tabBar.unselectedItemTintColor = .white
-      UITabBar.appearance().tintColor = K.C.lightPurple
-
+      UITabBar.appearance().tintColor = K.Colors.lightPurple
+      tabBarVC.tabBar.isTranslucent = false
 
       let window = UIWindow(frame: UIScreen.main.bounds)
       window.rootViewController = tabBarVC
