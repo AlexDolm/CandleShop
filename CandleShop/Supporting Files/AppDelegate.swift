@@ -73,5 +73,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       return UINavigationController(rootViewController: profileView)
 
   }
+
 }
 
