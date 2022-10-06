@@ -71,7 +71,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       let profileView = CatalogViewController()
       profileView.tabBarItem = UITabBarItem(title: "Личное", image: UIImage(systemName: "ellipsis"), tag: 3)
       return UINavigationController(rootViewController: profileView)
-
   }
 
 }

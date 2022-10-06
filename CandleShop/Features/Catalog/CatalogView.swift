@@ -9,15 +9,20 @@ import Foundation
 import UIKit
 //import SnapKit
 
+enum Categories: String, CaseIterable {
+  case candles = "Свечи"
+  case diffusers = "Диффузоры"
+  case sets = "Наборы"
+}
 
 class CatalogView: UIView {
-  public let songs = ["Hit the lights","Safe and sound","Shut up and dance","Cake","Tonight","Sweet Bitter","Lush life","Ocean drive ","Shake it off","Reality","Sweet Babe"]
+  public var songs = ["Hit the lights","Safe and sound","Shut up and dance","Cake","Tonight","Sweet Bitter","Lush life","Ocean drive ","Shake it off","Reality","Sweet Babe"]
 
-  public let autors = ["Selena Gomez","Capital cities","Walk The Moon","DNCE","Daniel Blume","Kush Kush","Zara Larsson","Duke Dumont","Taylor Swift","Lost frequencies","HDMI"]
+  public var autors = ["Selena Gomez","Capital cities","Walk The Moon","DNCE","Daniel Blume","Kush Kush","Zara Larsson","Duke Dumont","Taylor Swift","Lost frequencies","HDMI"]
 
-  let indetifireCell = "catalogCell"
+  private let indetifireCell = "catalogCell"
 
-  let sections = ["Свечи", "Диффузоры", "Наборы"]
+  private let sections: [String] = Categories.allCases.map { $0.rawValue }
 
   //  var year:Int = 1
   //  {
@@ -94,7 +99,6 @@ class CatalogView: UIView {
 
     pickerView.delegate = self
     pickerView.dataSource = self
-
     logoView.snp.makeConstraints { make in
       make.centerX.equalToSuperview()
       make.top.equalTo(safeAreaLayoutGuide.snp.top)
@@ -108,9 +112,6 @@ class CatalogView: UIView {
       make.top.equalTo(logoView.snp.bottom)
       make.height.equalTo(50)
     }
-
-
-
     
     pickerView.snp.makeConstraints { make in
       make.top.equalTo(-820)
@@ -130,6 +131,25 @@ class CatalogView: UIView {
       make.top.equalTo(arrowView.snp.bottom)
       make.bottom.equalToSuperview()
     }
+  }
+
+  func changeDataCandles(){
+
+      songs = ["Hit the lights","Safe and sound","Shut up and dance","Cake","Tonight","Sweet Bitter","Lush life","Ocean drive ","Shake it off","Reality","Sweet Babe"]
+      autors = ["Selena Gomez","Capital cities","Walk The Moon","DNCE","Daniel Blume","Kush Kush","Zara Larsson","Duke Dumont","Taylor Swift","Lost frequencies","HDMI"]
+    catalogTableView.reloadData()
+  }
+  func changeDataDiffusers(){
+
+      songs = ["Selena Gomez","Capital cities","Walk The Moon","DNCE","Daniel Blume","Kush Kush","Zara Larsson","Duke Dumont","Taylor Swift","Lost frequencies","HDMI"]
+      autors =     ["Hit the lights","Safe and sound","Shut up and dance","Cake","Tonight","Sweet Bitter","Lush life","Ocean drive ","Shake it off","Reality","Sweet Babe"]
+    catalogTableView.reloadData()
+  }
+  func changeDataSets(){
+
+    songs = ["Hit the lights","Safe and sound","Shut up and dance","Cake","Tonight","Sweet Bitter","Lush life","Ocean drive ","Shake it off","Reality","Sweet Babe"]
+    autors = ["Selena Gomez","Capital cities","Walk The Moon","DNCE","Daniel Blume","Kush Kush","Zara Larsson","Duke Dumont","Taylor Swift","Lost frequencies","HDMI"]
+    catalogTableView.reloadData()
   }
 }
 
@@ -182,13 +202,12 @@ extension CatalogView: UIPickerViewDataSource, UIPickerViewDelegate {
   }
 
   func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-
     let view = UIView()
     view.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
     let label = UILabel()
     label.textAlignment = .center
     label.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
-    label.text = sections[row]
+    label.text = String(sections[row])
     view.addSubview(label)
     label.textColor = .white
     label.font = UIFont(name:"HelveticaNeue-Bold", size: 18.0)
@@ -196,8 +215,23 @@ extension CatalogView: UIPickerViewDataSource, UIPickerViewDelegate {
       make.top.bottom.right.left.equalToSuperview()
     }
     view.transform = CGAffineTransform(rotationAngle: 90 * (CGFloat.pi/180))
-
     return view
+  }
+
+  func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+
+    switch row{
+    case 0:
+      changeDataCandles()
+    case 1:
+      changeDataDiffusers()
+    case 2:
+      changeDataSets()
+    default:
+      print("error")
+    }
+
+
   }
 
 }
