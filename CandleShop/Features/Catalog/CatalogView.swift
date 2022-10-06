@@ -40,17 +40,6 @@ class CatalogView: UIView {
     return imageView
   }()
 
-  public lazy var chapter: UILabel = {
-    let label = UILabel()
-    label.text = K.Strings.candle
-    label.textAlignment = .center
-    label.textColor = .white
-    label.font = UIFont(name:"HelveticaNeue-Bold", size: 18.0)
-    label.translatesAutoresizingMaskIntoConstraints = false
-    addSubview(label)
-    return label
-  }()
-
   public lazy var arrowView: UIImageView = {
     let imageView = UIImageView()
     imageView.image = UIImage(systemName: "chevron.compact.down")
@@ -60,8 +49,23 @@ class CatalogView: UIView {
     return imageView
   }()
 
-  public let pickerView = UIPickerView()
+  public lazy var view: UIView = {
+    let view = UIView()
+    view.backgroundColor = .black
+    view.translatesAutoresizingMaskIntoConstraints = false
+    addSubview(view)
+    return view
+  }()
 
+  public lazy var pickerView: UIPickerView = {
+    let pickerView = UIPickerView()
+    pickerView.translatesAutoresizingMaskIntoConstraints = false
+    view.addSubview(pickerView)
+    let rotationAngle = -90 * (CGFloat.pi/180)
+    pickerView.transform = CGAffineTransform(rotationAngle: rotationAngle)
+    pickerView.backgroundColor = .black
+    return pickerView
+  }()
 
   public lazy var catalogTableView: UITableView = {
     let tableView = UITableView()
@@ -98,47 +102,34 @@ class CatalogView: UIView {
       make.width.equalTo(30)
     }
 
-    chapter.snp.makeConstraints { make in
+    view.snp.makeConstraints { make in
       make.right.equalToSuperview()
       make.left.equalToSuperview()
-      make.top.equalTo(logoView.snp.bottom).offset(8)
-      make.height.equalTo(28)
+      make.top.equalTo(logoView.snp.bottom)
+      make.height.equalTo(50)
+    }
+
+
+
+    
+    pickerView.snp.makeConstraints { make in
+      make.top.equalTo(-820)
+      make.bottom.equalTo(820)
+      make.width.equalTo(50)
+      make.centerX.equalToSuperview()
     }
 
     arrowView.snp.makeConstraints { make in
       make.centerX.equalToSuperview()
-      make.top.equalTo(chapter.snp.bottom)
+      make.top.equalTo(view.snp.bottom).offset(-8)
     }
 
-
-
-
-
-
-
-
-    let rotationAngle = -90 * (CGFloat.pi/180)
-    pickerView.transform = CGAffineTransform(rotationAngle: rotationAngle)
-
-    addSubview(pickerView)
-
-    pickerView.snp.makeConstraints { make in
+    catalogTableView.snp.makeConstraints { make in
       make.right.equalToSuperview()
       make.left.equalToSuperview()
-      make.bottom.equalToSuperview().offset(300)
-      make.top.equalToSuperview()
-//      make.left.equalToSuperview()
-
-      
+      make.top.equalTo(arrowView.snp.bottom)
+      make.bottom.equalToSuperview()
     }
-    pickerView.backgroundColor = .red
-
-//    catalogTableView.snp.makeConstraints { make in
-//      make.right.equalToSuperview()
-//      make.left.equalToSuperview()
-//      make.top.equalTo(arrowView.snp.bottom)
-//      make.bottom.equalToSuperview()
-//    }
   }
 }
 
@@ -187,32 +178,25 @@ extension CatalogView: UIPickerViewDataSource, UIPickerViewDelegate {
     sections.count
   }
   func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-    return 100
-  }
-
-  func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
-    return 100
+    return 150
   }
 
   func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+
     let view = UIView()
-   // view.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-    view.snp.makeConstraints { make in
-      make.height.equalTo(25)
-      make.width.equalTo(100)
-        }
-    view.backgroundColor = .blue
+    view.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
     let label = UILabel()
     label.textAlignment = .center
-   // label.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-
+    label.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
     label.text = sections[row]
     view.addSubview(label)
+    label.textColor = .white
+    label.font = UIFont(name:"HelveticaNeue-Bold", size: 18.0)
     label.snp.makeConstraints { make in
       make.top.bottom.right.left.equalToSuperview()
-        }
+    }
     view.transform = CGAffineTransform(rotationAngle: 90 * (CGFloat.pi/180))
-    
+
     return view
   }
 
