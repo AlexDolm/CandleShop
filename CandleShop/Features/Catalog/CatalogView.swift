@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 //import SnapKit
 
+
 enum Categories: String, CaseIterable {
   case candles = "Свечи"
   case diffusers = "Диффузоры"
@@ -22,7 +23,7 @@ class CatalogView: UIView {
 
   private let indetifireCell = "catalogCell"
 
-  private let sections: [String] = Categories.allCases.map { $0.rawValue }
+
 
   //  var year:Int = 1
   //  {
@@ -54,23 +55,71 @@ class CatalogView: UIView {
     return imageView
   }()
 
-  public lazy var view: UIView = {
-    let view = UIView()
-    view.backgroundColor = .black
-    view.translatesAutoresizingMaskIntoConstraints = false
-    addSubview(view)
-    return view
+  public lazy var scrollView: UIScrollView = {
+    let scrollView = UIScrollView()
+    scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width + 300, height: 30)
+    scrollView.translatesAutoresizingMaskIntoConstraints = false
+    scrollView.showsHorizontalScrollIndicator = false
+    addSubview(scrollView)
+    return scrollView
   }()
 
-  public lazy var pickerView: UIPickerView = {
-    let pickerView = UIPickerView()
-    pickerView.translatesAutoresizingMaskIntoConstraints = false
-    view.addSubview(pickerView)
-    let rotationAngle = -90 * (CGFloat.pi/180)
-    pickerView.transform = CGAffineTransform(rotationAngle: rotationAngle)
-    pickerView.backgroundColor = .black
-    return pickerView
+  public lazy var stackView: UIStackView = {
+    let stackView = UIStackView()
+    stackView.axis = .horizontal
+    stackView.distribution = .fill
+    //stackView.spacing = 12
+    stackView.translatesAutoresizingMaskIntoConstraints = false
+   // stackView.layoutMargins = UIEdgeInsets(top: 12, left: 0, bottom: 12, right: 0)
+   // stackView.isLayoutMarginsRelativeArrangement = true
+    return stackView
   }()
+
+  private lazy var sectionButtons: [UIButton] = {
+    var buttonArray = [UIButton]()
+    var tag = 1
+    for item in Categories.allCases {
+      let button = UIButton()
+      button.tag = tag
+      tag += 1
+      button.setTitle(item.rawValue, for: .normal)
+      button.setTitleColor(UIColor.lightGray, for: .normal)
+      button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+     button.addTarget(self, action:#selector(selectButton), for: .touchUpInside)
+     button.translatesAutoresizingMaskIntoConstraints = false
+     button.snp.makeConstraints { make in
+       make.width.equalTo(150)
+     }
+      buttonArray.append(button)
+      changeButton(button:buttonArray[0])
+    }
+    return buttonArray
+  }()
+
+  @objc func selectButton(sender: UIButton){
+    for button in sectionButtons {
+      button.setTitleColor(UIColor.lightGray, for: .normal)
+      button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+    }
+    changeButton(button: sender)
+    switch sender.tag{
+    case 1:
+      scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+      changeDataCandles()
+    case 2:
+      scrollView.setContentOffset(CGPoint(x: 150, y: 0), animated: true)
+      changeDataDiffusers()
+    default:
+      scrollView.setContentOffset(CGPoint(x: 300, y: 0), animated: true)
+      changeDataSets()
+    }
+  }
+
+  func changeButton(button: UIButton){
+    button.setTitleColor(UIColor.white, for: .normal)
+    button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+  }
+
 
   public lazy var catalogTableView: UITableView = {
     let tableView = UITableView()
@@ -97,8 +146,7 @@ class CatalogView: UIView {
 
   func setup() {
 
-    pickerView.delegate = self
-    pickerView.dataSource = self
+
     logoView.snp.makeConstraints { make in
       make.centerX.equalToSuperview()
       make.top.equalTo(safeAreaLayoutGuide.snp.top)
@@ -106,23 +154,28 @@ class CatalogView: UIView {
       make.width.equalTo(30)
     }
 
-    view.snp.makeConstraints { make in
+    scrollView.snp.makeConstraints { make in
       make.right.equalToSuperview()
       make.left.equalToSuperview()
       make.top.equalTo(logoView.snp.bottom)
-      make.height.equalTo(50)
+      make.height.equalTo(30)
     }
-    
-    pickerView.snp.makeConstraints { make in
-      make.top.equalTo(-820)
-      make.bottom.equalTo(820)
-      make.width.equalTo(50)
-      make.centerX.equalToSuperview()
+
+    scrollView.addSubview(stackView)
+
+    stackView.snp.makeConstraints { make in
+      make.top.equalToSuperview()
+      make.left.equalTo(scrollView.snp.centerX).offset(-75)
+      make.height.equalTo(30)
+    }
+
+    for button in sectionButtons {
+      stackView.addArrangedSubview(button)
     }
 
     arrowView.snp.makeConstraints { make in
       make.centerX.equalToSuperview()
-      make.top.equalTo(view.snp.bottom).offset(-8)
+      make.top.equalTo(scrollView.snp.bottom).offset(-8)
     }
 
     catalogTableView.snp.makeConstraints { make in
@@ -135,14 +188,14 @@ class CatalogView: UIView {
 
   func changeDataCandles(){
 
-      songs = ["Hit the lights","Safe and sound","Shut up and dance","Cake","Tonight","Sweet Bitter","Lush life","Ocean drive ","Shake it off","Reality","Sweet Babe"]
-      autors = ["Selena Gomez","Capital cities","Walk The Moon","DNCE","Daniel Blume","Kush Kush","Zara Larsson","Duke Dumont","Taylor Swift","Lost frequencies","HDMI"]
+    songs = ["Hit the lights","Safe and sound","Shut up and dance","Cake","Tonight","Sweet Bitter","Lush life","Ocean drive ","Shake it off","Reality","Sweet Babe"]
+    autors = ["Selena Gomez","Capital cities","Walk The Moon","DNCE","Daniel Blume","Kush Kush","Zara Larsson","Duke Dumont","Taylor Swift","Lost frequencies","HDMI"]
     catalogTableView.reloadData()
   }
   func changeDataDiffusers(){
 
-      songs = ["Selena Gomez","Capital cities","Walk The Moon","DNCE","Daniel Blume","Kush Kush","Zara Larsson","Duke Dumont","Taylor Swift","Lost frequencies","HDMI"]
-      autors =     ["Hit the lights","Safe and sound","Shut up and dance","Cake","Tonight","Sweet Bitter","Lush life","Ocean drive ","Shake it off","Reality","Sweet Babe"]
+    songs = ["Selena Gomez","Capital cities","Walk The Moon","DNCE","Daniel Blume","Kush Kush","Zara Larsson","Duke Dumont","Taylor Swift","Lost frequencies","HDMI"]
+    autors =     ["Hit the lights","Safe and sound","Shut up and dance","Cake","Tonight","Sweet Bitter","Lush life","Ocean drive ","Shake it off","Reality","Sweet Babe"]
     catalogTableView.reloadData()
   }
   func changeDataSets(){
@@ -187,51 +240,4 @@ extension CatalogView: UITableViewDataSource{
     cell?.imageView?.image =  #imageLiteral(resourceName: "logo")
     return cell!
   }
-}
-
-extension CatalogView: UIPickerViewDataSource, UIPickerViewDelegate {
-  func numberOfComponents(in pickerView: UIPickerView) -> Int {
-    1
-  }
-
-  func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-    sections.count
-  }
-  func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-    return 150
-  }
-
-  func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-    let view = UIView()
-    view.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
-    let label = UILabel()
-    label.textAlignment = .center
-    label.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
-    label.text = String(sections[row])
-    view.addSubview(label)
-    label.textColor = .white
-    label.font = UIFont(name:"HelveticaNeue-Bold", size: 18.0)
-    label.snp.makeConstraints { make in
-      make.top.bottom.right.left.equalToSuperview()
-    }
-    view.transform = CGAffineTransform(rotationAngle: 90 * (CGFloat.pi/180))
-    return view
-  }
-
-  func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-
-    switch row{
-    case 0:
-      changeDataCandles()
-    case 1:
-      changeDataDiffusers()
-    case 2:
-      changeDataSets()
-    default:
-      print("error")
-    }
-
-
-  }
-
 }
