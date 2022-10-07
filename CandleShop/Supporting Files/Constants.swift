@@ -12,11 +12,16 @@ class K {
   class Colors {
     static let lightBlue = UIColor(named: "lightBlue")
     static let lightPurple = UIColor(named: "lightPurple")
-    static let white = UIColor.white
+    static let background = UIColor(named: "background")
+    static let darkBackground = UIColor(named: "darkBackground")
+    static let title = UIColor(named: "title")
+    static let subtitle = UIColor(named: "subtitle")
+    static let tint = UIColor(named: "tint")
   }
   class Images {
     static let logo = UIImage(named: "logo")!
     static let logoText = UIImage(named: "logoText")!
+    static let love = UIImage(named: "love")!
   }
   class Api {
     static let clientId = "a2f139be"

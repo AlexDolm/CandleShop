@@ -26,8 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       tabBarVC.setViewControllers(views, animated: true)
 
       tabBarVC.tabBar.unselectedItemTintColor = .white
-      UITabBar.appearance().tintColor = K.Colors.lightPurple
+      UITabBar.appearance().tintColor = K.Colors.tint
       tabBarVC.tabBar.isTranslucent = false
+      tabBarVC.tabBar.backgroundColor = K.Colors.background
 
       let window = UIWindow(frame: UIScreen.main.bounds)
       window.rootViewController = tabBarVC
@@ -39,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func getCatalogView() -> UINavigationController {
-        let favoriteView = CatalogViewController()
+        let favoriteView = CatalogViewModel()
         favoriteView.tabBarItem = UITabBarItem(title: "Каталог", image: UIImage(systemName: "flame.fill"), tag: 0)
         return UINavigationController(rootViewController: favoriteView)
 
@@ -54,21 +55,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func getBasketView() -> UINavigationController {
-        let searchView = CatalogViewController()
+        let searchView = CatalogViewModel()
         searchView.tabBarItem = UITabBarItem(title: "Корзина", image: UIImage(systemName: "cart.fill"), tag: 2)
         return UINavigationController(rootViewController: searchView)
 
     }
 
     func getOrdersView() -> UINavigationController {
-        let profileView = CatalogViewController()
+        let profileView = CatalogViewModel()
         profileView.tabBarItem = UITabBarItem(title: "Заказы", image: UIImage(systemName: "bag.fill"), tag: 3)
         return UINavigationController(rootViewController: profileView)
 
     }
 
   func getPersonalView() -> UINavigationController {
-      let profileView = CatalogViewController()
+      let profileView = CatalogViewModel()
       profileView.tabBarItem = UITabBarItem(title: "Личное", image: UIImage(systemName: "ellipsis"), tag: 3)
       return UINavigationController(rootViewController: profileView)
   }
