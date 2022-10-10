@@ -14,6 +14,8 @@ class K {
     static let lightPurple = UIColor(named: "lightPurple")
     static let background = UIColor(named: "background")
     static let darkBackground = UIColor(named: "darkBackground")
+    static let lightBackground = UIColor(named: "lightBackground")
+
     static let title = UIColor(named: "title")
     static let subtitle = UIColor(named: "subtitle")
     static let tint = UIColor(named: "tint")
