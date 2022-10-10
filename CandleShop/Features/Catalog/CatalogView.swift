@@ -18,7 +18,7 @@ enum Categories: String, CaseIterable {
   case sets = "Наборы"
 }
 
-class CatalogViewController: UIView {
+class CatalogView: UIView {
 
   var delegate: NavigationDelegate?
   public var songs = ["Hit the lights","Safe and sound","Shut up and dance","Cake","Tonight","Sweet Bitter","Lush life","Ocean drive ","Shake it off","Reality","Sweet Babe"]
@@ -208,7 +208,7 @@ class CatalogViewController: UIView {
   }
 }
 
-extension CatalogViewController: UITableViewDelegate{
+extension CatalogView: UITableViewDelegate{
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 290
   }
@@ -216,13 +216,13 @@ extension CatalogViewController: UITableViewDelegate{
       func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
 
-        self.delegate?.present(controller: SaleViewController())
+        self.delegate?.present(controller: ProductViewModel())
        // catalog.moveScreen(controller: SaleViewController())
 //         self.navigationController?.pushViewController(SaleViewController(), animated: true)
       }
 }
 
-extension CatalogViewController: UITableViewDataSource{
+extension CatalogView: UITableViewDataSource{
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return songs.count
 

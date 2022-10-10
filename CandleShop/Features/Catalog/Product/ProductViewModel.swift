@@ -8,21 +8,15 @@
 import UIKit
 import SnapKit
 
-protocol NavigationDelegate {
-
-  func present(controller: UIViewController) //тут прописываем переменные которые хотим передать в контроллер
-  }
-
-class CatalogViewModel: UIViewController, NavigationDelegate {
-
-  private lazy var rootView: CatalogView = .init()
+class ProductViewModel: UIViewController {
   
+  private lazy var rootView: ProductView = .init()
+
 
   override func loadView() {
     view = rootView
-    rootView.delegate = self
   }
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -36,10 +30,6 @@ class CatalogViewModel: UIViewController, NavigationDelegate {
    // moveScreen(controller: SaleViewController())
     //rootView.year = 2
    // rootView.subtitleLabel.text = "опоп"
-  }
-
-  func present(controller: UIViewController) {
-    self.present(controller, animated: true, completion: nil)
   }
 
 
