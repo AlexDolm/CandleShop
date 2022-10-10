@@ -69,7 +69,7 @@ class CatalogCell: UITableViewCell {
   public lazy var volumeLabel: UILabel = {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
-    label.text = "250 мл"
+    label.text = "от 600 ₽"
     label.numberOfLines = 0
     label.lineBreakMode = .byWordWrapping
     label.textColor = K.Colors.title

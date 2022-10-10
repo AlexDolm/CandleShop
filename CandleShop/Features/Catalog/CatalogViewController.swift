@@ -10,6 +10,8 @@ import UIKit
 //import SnapKit
 
 
+
+
 enum Categories: String, CaseIterable {
   case candles = "Свечи"
   case diffusers = "Диффузоры"
@@ -17,13 +19,13 @@ enum Categories: String, CaseIterable {
 }
 
 class CatalogViewController: UIView {
+
+  var delegate: NavigationDelegate?
   public var songs = ["Hit the lights","Safe and sound","Shut up and dance","Cake","Tonight","Sweet Bitter","Lush life","Ocean drive ","Shake it off","Reality","Sweet Babe"]
 
   public var autors = ["Selena Gomez","Capital cities","Walk The Moon","DNCE","Daniel Blume","Kush Kush","Zara Larsson","Duke Dumont","Taylor Swift","Lost frequencies","HDMI"]
 
   private let indetifireCell = "catalogCell"
-
-
 
   //  var year:Int = 1
   //  {
@@ -146,7 +148,7 @@ class CatalogViewController: UIView {
   }
 
   func setup() {
-
+    
     logoView.snp.makeConstraints { make in
       make.centerX.equalToSuperview()
       make.top.equalTo(safeAreaLayoutGuide.snp.top)
@@ -211,9 +213,13 @@ extension CatalogViewController: UITableViewDelegate{
     return 290
   }
 
-  //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-  //        self.navigationController?.pushViewController(PlayerViewController(), animated: true)
-  //    }
+      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+
+        self.delegate?.present(controller: SaleViewController())
+       // catalog.moveScreen(controller: SaleViewController())
+//         self.navigationController?.pushViewController(SaleViewController(), animated: true)
+      }
 }
 
 extension CatalogViewController: UITableViewDataSource{
@@ -224,6 +230,7 @@ extension CatalogViewController: UITableViewDataSource{
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     var cell = tableView.dequeueReusableCell(withIdentifier: CatalogCell.indetifireCell, for: indexPath)
+
 //    cell = UITableViewCell(style: .subtitle, reuseIdentifier: indetifireCell)
 //    cell?.backgroundColor = backgroundColor
 //    cell?.textLabel?.textColor = .lightGray
