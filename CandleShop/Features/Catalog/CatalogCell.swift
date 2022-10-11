@@ -12,6 +12,8 @@ import SnapKit
 class CatalogCell: UITableViewCell {
   static let indetifireCell = "catalogCell"
 
+  //static public var imageq = UIImage(named: "lavanda")
+
   public lazy var shadowView: UIView = {
     let view = UIView()
     view.translatesAutoresizingMaskIntoConstraints = false

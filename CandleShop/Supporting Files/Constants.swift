@@ -15,9 +15,9 @@ class K {
     static let background = UIColor(named: "background")
     static let darkBackground = UIColor(named: "darkBackground")
     static let lightBackground = UIColor(named: "lightBackground")
-
     static let title = UIColor(named: "title")
     static let subtitle = UIColor(named: "subtitle")
+    static let grayText = UIColor(named: "grayText")
     static let tint = UIColor(named: "tint")
   }
   class Images {

@@ -112,6 +112,8 @@ class CatalogView: UIView {
     case 2:
       scrollView.setContentOffset(CGPoint(x: 150, y: 0), animated: true)
       changeDataDiffusers()
+//      CatalogCell.imageq = UIImage(named: "coconat")
+//      catalogTableView.reloadData()
     default:
       scrollView.setContentOffset(CGPoint(x: 300, y: 0), animated: true)
       changeDataSets()
