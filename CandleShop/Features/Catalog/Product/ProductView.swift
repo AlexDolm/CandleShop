@@ -46,7 +46,7 @@ class ProductView: UIView {
     label.translatesAutoresizingMaskIntoConstraints = false
     label.text = "Свеча “Лаванда”"
     label.textColor = K.Colors.title
-    label.font = UIFont.systemFont(ofSize: 22, weight: .light)
+    label.font = UIFont.systemFont(ofSize: 22, weight: .regular)
     addSubview(label)
     return label
   }()
@@ -100,7 +100,7 @@ class ProductView: UIView {
     label.translatesAutoresizingMaskIntoConstraints = false
     label.text = "600 ₽"
     label.textColor = .white
-    label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
+    label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
     addSubview(label)
     return label
   }()
@@ -124,7 +124,7 @@ class ProductView: UIView {
     label.translatesAutoresizingMaskIntoConstraints = false
     label.text = "-"
     label.textColor = .white
-    label.font = UIFont.systemFont(ofSize: 20, weight: .light)
+    label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
     return label
   }()
 
@@ -135,7 +135,7 @@ class ProductView: UIView {
     label.text = "1"
     label.isUserInteractionEnabled = false
     label.textColor = .white
-    label.font = UIFont.systemFont(ofSize: 22, weight: .light)
+    label.font = UIFont.systemFont(ofSize: 22, weight: .medium)
     return label
   }()
 
@@ -144,7 +144,7 @@ class ProductView: UIView {
     label.translatesAutoresizingMaskIntoConstraints = false
     label.text = "+"
     label.textColor = .white
-    label.font = UIFont.systemFont(ofSize: 20, weight: .light)
+    label.font = UIFont.systemFont(ofSize: 20, weight: .medium)
     return label
   }()
 
@@ -170,7 +170,7 @@ class ProductView: UIView {
     label.isUserInteractionEnabled = false
     label.textColor = K.Colors.grayText
     label.numberOfLines = 0
-    label.font = UIFont.systemFont(ofSize: 13, weight: .regular)
+    label.font = UIFont.systemFont(ofSize: 13, weight: .medium)
     addSubview(label)
     return label
   }()
@@ -182,7 +182,7 @@ class ProductView: UIView {
     label.textColor = .white
     let amountText = NSMutableAttributedString.init(string: "Вид аромата:\nтравяной, пряный ")
 
-    amountText.setAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12),
+    amountText.setAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12, weight: .medium),
                                   NSAttributedString.Key.foregroundColor: K.Colors.grayText],
                                  range: NSMakeRange(0, 12))
 
@@ -199,7 +199,7 @@ class ProductView: UIView {
     label.isUserInteractionEnabled = false
     label.textColor = K.Colors.grayText
     label.numberOfLines = 0
-    label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+    label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
     addSubview(label)
     return label
   }()
@@ -211,7 +211,7 @@ class ProductView: UIView {
     label.textColor = .white
     let amountText = NSMutableAttributedString.init(string: "Верхние ноты: лимон, свежие, альдегиды")
 
-    amountText.setAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12),
+    amountText.setAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12, weight: .medium),
                                   NSAttributedString.Key.foregroundColor: K.Colors.grayText],
                                  range: NSMakeRange(0, 13))
 
@@ -228,7 +228,7 @@ class ProductView: UIView {
     label.textColor = .white
     let amountText = NSMutableAttributedString.init(string: "Средние ноты: апельсин, цветочные акценты")
 
-    amountText.setAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12),
+    amountText.setAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12, weight: .medium),
                                   NSAttributedString.Key.foregroundColor: K.Colors.grayText],
                                  range: NSMakeRange(0, 13))
 
@@ -246,7 +246,7 @@ class ProductView: UIView {
     label.textColor = .white
     let amountText = NSMutableAttributedString.init(string: "Базовые ноты: ваниль, ноты специй")
 
-    amountText.setAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12),
+    amountText.setAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12, weight: .medium),
                                   NSAttributedString.Key.foregroundColor: K.Colors.grayText],
                                  range: NSMakeRange(0, 13))
 

@@ -19,6 +19,10 @@ class K {
     static let subtitle = UIColor(named: "subtitle")
     static let grayText = UIColor(named: "grayText")
     static let tint = UIColor(named: "tint")
+    static let enableButton = UIColor(named: "enableButton")
+    static let titleMini = UIColor(named: "titleMini")
+
+
   }
   class Images {
     static let logo = UIImage(named: "logo")!

@@ -86,8 +86,8 @@ class CatalogView: UIView {
       button.tag = tag
       tag += 1
       button.setTitle(item.rawValue, for: .normal)
-      button.setTitleColor(UIColor.lightGray, for: .normal)
-      button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+      button.setTitleColor(K.Colors.enableButton, for: .normal)
+      button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
      button.addTarget(self, action:#selector(selectButton), for: .touchUpInside)
      button.translatesAutoresizingMaskIntoConstraints = false
      button.snp.makeConstraints { make in
@@ -101,8 +101,8 @@ class CatalogView: UIView {
 
   @objc func selectButton(sender: UIButton){
     for button in sectionButtons {
-      button.setTitleColor(UIColor.lightGray, for: .normal)
-      button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+      button.setTitleColor(K.Colors.enableButton, for: .normal)
+      button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .medium)
     }
     changeButton(button: sender)
     switch sender.tag{
@@ -122,7 +122,7 @@ class CatalogView: UIView {
 
   func changeButton(button: UIButton){
     button.setTitleColor(UIColor.white, for: .normal)
-    button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+    button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .medium)
   }
 
 

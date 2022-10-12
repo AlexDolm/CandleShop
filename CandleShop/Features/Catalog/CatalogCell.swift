@@ -43,8 +43,8 @@ class CatalogCell: UITableViewCell {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.text = "Лаванда"
-    label.textColor = K.Colors.title
-    label.font = UIFont.systemFont(ofSize: 14)
+    label.textColor = K.Colors.titleMini
+    label.font = UIFont.systemFont(ofSize: 15, weight: .medium)
     return label
   }()
 
@@ -55,7 +55,7 @@ class CatalogCell: UITableViewCell {
     label.numberOfLines = 0
     label.lineBreakMode = .byWordWrapping
     label.textColor = K.Colors.subtitle
-    label.font = UIFont.systemFont(ofSize: 11)
+    label.font = UIFont.systemFont(ofSize: 11, weight: .medium)
     return label
   }()
 
@@ -75,7 +75,7 @@ class CatalogCell: UITableViewCell {
     label.numberOfLines = 0
     label.lineBreakMode = .byWordWrapping
     label.textColor = K.Colors.title
-    label.font = UIFont.systemFont(ofSize: 9)
+    label.font = UIFont.systemFont(ofSize: 9, weight: .medium)
     return label
   }()
 
