@@ -168,7 +168,7 @@ class ProductView: UIView {
     label.translatesAutoresizingMaskIntoConstraints = false
     label.text = "Окунитесь в атмосферу французского Прованса. Аромат лаванды регенерирует, помогает расслабиться после тяжелого рабочего дня"
     label.isUserInteractionEnabled = false
-    label.textColor = K.Colors.grayText
+    label.textColor = K.Colors.titleMini
     label.numberOfLines = 0
     label.font = UIFont.systemFont(ofSize: 13, weight: .medium)
     addSubview(label)
@@ -183,7 +183,7 @@ class ProductView: UIView {
     let amountText = NSMutableAttributedString.init(string: "Вид аромата:\nтравяной, пряный ")
 
     amountText.setAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12, weight: .medium),
-                                  NSAttributedString.Key.foregroundColor: K.Colors.grayText],
+                                  NSAttributedString.Key.foregroundColor: K.Colors.enableButton],
                                  range: NSMakeRange(0, 12))
 
     label.attributedText = amountText
@@ -197,7 +197,7 @@ class ProductView: UIView {
     label.translatesAutoresizingMaskIntoConstraints = false
     label.text = "Пирамида аромата:"
     label.isUserInteractionEnabled = false
-    label.textColor = K.Colors.grayText
+    label.textColor = K.Colors.enableButton
     label.numberOfLines = 0
     label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
     addSubview(label)
@@ -212,7 +212,7 @@ class ProductView: UIView {
     let amountText = NSMutableAttributedString.init(string: "Верхние ноты: лимон, свежие, альдегиды")
 
     amountText.setAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12, weight: .medium),
-                                  NSAttributedString.Key.foregroundColor: K.Colors.grayText],
+                                  NSAttributedString.Key.foregroundColor: K.Colors.enableButton],
                                  range: NSMakeRange(0, 13))
 
     label.attributedText = amountText
@@ -229,7 +229,7 @@ class ProductView: UIView {
     let amountText = NSMutableAttributedString.init(string: "Средние ноты: апельсин, цветочные акценты")
 
     amountText.setAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12, weight: .medium),
-                                  NSAttributedString.Key.foregroundColor: K.Colors.grayText],
+                                  NSAttributedString.Key.foregroundColor: K.Colors.enableButton],
                                  range: NSMakeRange(0, 13))
 
     label.attributedText = amountText
@@ -247,7 +247,7 @@ class ProductView: UIView {
     let amountText = NSMutableAttributedString.init(string: "Базовые ноты: ваниль, ноты специй")
 
     amountText.setAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12, weight: .medium),
-                                  NSAttributedString.Key.foregroundColor: K.Colors.grayText],
+                                  NSAttributedString.Key.foregroundColor: K.Colors.enableButton],
                                  range: NSMakeRange(0, 13))
 
     label.attributedText = amountText

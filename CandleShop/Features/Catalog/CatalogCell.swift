@@ -43,7 +43,7 @@ class CatalogCell: UITableViewCell {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.text = "Лаванда"
-    label.textColor = K.Colors.titleMini
+    label.textColor = .white
     label.font = UIFont.systemFont(ofSize: 15, weight: .medium)
     return label
   }()
@@ -54,7 +54,7 @@ class CatalogCell: UITableViewCell {
     label.text = "Окунитесь в атмосферу французского Прованса. Аромат лаванды регенерирует, помогает расслабиться после тяжелого рабочего дня"
     label.numberOfLines = 0
     label.lineBreakMode = .byWordWrapping
-    label.textColor = K.Colors.subtitle
+    label.textColor = K.Colors.enableButton
     label.font = UIFont.systemFont(ofSize: 11, weight: .medium)
     return label
   }()
